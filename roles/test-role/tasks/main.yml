@@ -1,0 +1,14 @@
+---
+# tasks file for test-role
+
+- name: echo var from defaults
+  command: "echo {{ test_var }}"
+
+- debug: var=test_var
+
+- name: create file with content example
+  copy:
+    dest: "/Users/dan/ansible/ansible_content.txt"
+    content: |
+      test_string
+      {{ test_var }}
